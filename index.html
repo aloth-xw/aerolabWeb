@@ -7,14 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    </head>
+    <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
-    <header>
+    <header class="head">
         <div>
-            <div>
-                <span>AEROLAB</span>
+            <div class="brand">
+                <span class="logo">AEROLAB</span>
                 <h2>Flight simulator</h2>
             </div>
             <nav>
@@ -32,39 +32,72 @@
         <section class="hero">
             <h2>BUILD LAUNCH BECOME</h2>
 
-         
-                <p>Build your aircraft</p>
-                <p>Launch your rocket</p>
-                <p>Become an engineer</p>
-          
-
-            <img src="" alt="" width="" height="">
+            <ul class="hero-list">
+                <li>Build your aircraft</li>
+                <li>Launch your rocket</li>
+                <li>Become an engineer</li>
+            </ul>
         </section>
 
         <section id="simulator">
             <h2>Simulator</h2>
-            <p>Coming soon...</p>
+            <div class="panel">
+                <span class="panel-status">In development</span>
+                <p>A PC flight simulator built to teach, not just to fly — tune real aerodynamic variables and watch how the aircraft responds.</p>
+            </div>
         </section>
 
         <section id ="learn">
             <h2>Learn</h2>
-            <p>Coming soon...</p>
+            <dl class="learn-list">
+                <div>
+                    <dt>Aerodynamics</dt>
+                    <dd>Lift, drag, angle of attack</dd>
+                </div>
+                <div>
+                    <dt>Flight physics</dt>
+                    <dd>Forces, stability, control response</dd>
+                </div>
+                <div>
+                    <dt>Engineering</dt>
+                    <dd>Wing design, airfoils, aircraft configuration</dd>
+                </div>
+            </dl>
         </section>
 
         <section id="roadmap">
             <h2>Roadmap</h2>
-            <p>Coming soon...</p>
+            <ol class="timeline">
+                <li><span class="tl-num">01</span><span class="tl-body">Flyable prototype — one aircraft, core physics, basic HUD</span></li>
+                <li><span class="tl-num">02</span><span class="tl-body">Flight instrument tuning, attitude hold</span></li>
+                <li><span class="tl-num">03</span><span class="tl-body">Multiple aircraft and environments</span></li>
+            </ol>
         </section>
 
         <section id="faq">
             <h2>FAQ</h2>
-            <p>Coming soon...</p>
+            <details>
+                <summary>What is Aerolab?</summary>
+                <p>A free, educational project to learn aeronautics and science by experimenting with real variables in a flight simulator.</p>
+            </details>
+            <details>
+                <summary>Is it free?</summary>
+                <p>Yes. Aerolab is a non-commercial, educational project.</p>
+            </details>
+            <details>
+                <summary>What platforms will it support?</summary>
+                <p>PC first. Other platforms may follow depending on how the project grows.</p>
+            </details>
+            <details>
+                <summary>When can I try it?</summary>
+                <p>Join the waitlist to get notified as soon as the first demo is ready.</p>
+            </details>
         </section>
 
     </main>
 
     <footer>
-        <button>Join waitlist</button>
+        <button class="cta">Join waitlist</button>
         <p>Get notified when first demo is available</p>
     </footer>
 </body>

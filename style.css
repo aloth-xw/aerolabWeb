@@ -1,3 +1,16 @@
+:root {
+    --bg: #131235;
+    --bg-panel: #1A1948;
+    --text: #ECECF8;
+    --text-dim: #8B89B8;
+    --accent: #8FA8FF;
+    --accent-warn: #FF692E;
+    --line: rgba(236, 236, 248, .12);
+}
+
+* {
+    box-sizing: border-box;
+}
 ol {
     display: flex;
     justify-content: space-around;
@@ -22,16 +35,119 @@ body {
     color: #ECECF8;
 }
 
-.hero {
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.head {
+    position: relative;
+    background-image: url("imagenFondoHead.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-span {
+.head::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(19,18,53,.35) 0%, rgba(19,18,53,.85) 100%);
+    z-index: 0;
+}
+
+.head > * {
+    position: relative;
+    z-index: 1;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, var(--accent-warn) 0%, transparent 65%);
+    transform: translate(-50%, -55%);
+    opacity: .18;
+    filter: blur(40px);
+    z-index: -1;
+}
+
+body {
+    position: relative;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.horizon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    height: 480px;
+    z-index: -1;
+    opacity: .5;
+}
+
+.hero-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+    color: var(--text-dim);
+}
+
+section {
+    padding: 80px 60px;
+    border-top: 1px solid var(--line);
+}
+
+section h2 {
+    margin-bottom: 32px;
+}
+
+.panel {
+    border: 1px solid var(--line);
+    background: var(--bg-panel);
+    padding: 32px;
+    max-width: 560px;
+}
+
+.panel-status {
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.logo {
     font-size: 64px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-family: "Audiowide", sans-serif;
+}
+
+.panel-status {
+    font-size: 20px;
     letter-spacing: 3px;
     font-weight: 700;
     font-family: "Audiowide", sans-serif;
@@ -57,6 +173,26 @@ h2 {
     letter-spacing: 4px;
 }
 
+.learn-list {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 32px;
+    margin: 0;
+}
+
+.learn-list dt {
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-family: "Audiowide", sans-serif;
+    letter-spacing: 4px;
+}
+
+.learn-list dd {
+    margin: 0;
+    color: var(--text-dim);
+    font-family: "Space Grotesk", sans-serif;
+}
+
 p {
     font-family: "Space Grotesk", sans-serif;
 }
@@ -64,4 +200,65 @@ p {
 .hero p {
     font-size: 20px;
     margin: 24px;
+}
+
+.timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid var(--line);
+}
+
+.timeline li {
+    display: flex;
+    gap: 20px;
+    padding: 16px 0 16px 24px;
+}
+
+.tl-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.tl-num {
+    font-family: "Audiowide", sans-serif;
+    font-size: 14px;
+    color: var(--accent);
+}
+
+details {
+    border-top: 1px solid var(--line);
+    padding: 16px 0;
+}
+
+details:last-of-type {
+    border-bottom: 1px solid var(--line);
+}
+
+summary {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+details p {
+    margin: 12px 0 0;
+    color: var(--text-dim);
+}
+
+.cta {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--bg);
+    background: var(--accent-warn);
+    border: none;
+    padding: 14px 32px;
+    cursor: pointer;
+  justify-content: space-around;
+}
+
+.cta:hover {
+    background: #FFA57D;
 }
