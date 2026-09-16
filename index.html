@@ -11,25 +11,25 @@
 </head>
 
 <body>
-    <header class="head">
-        <div>
-            <div class="brand">
-                <span class="logo">AEROLAB</span>
-                <h2>Flight simulator</h2>
-            </div>
-            <nav>
-                <ol>
-                    <li><a href="#simulator">Simulator</a></li>
-                    <li><a href="#learn">Learn</a></li>
-                    <li><a href="#roadmap">Roadmap</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ol>
-            </nav>
-        </div>
-    </header>
-
     <main>
         <section class="hero">
+                <header class="head">
+                <div>
+                    <div class="brand">
+                        <span class="logo">AEROLAB</span>
+                        <h2>Flight simulator</h2>
+                    </div>
+                    <nav>
+                        <ol>
+                            <li><a href="#simulator">Simulator</a></li>
+                            <li><a href="#learn">Learn</a></li>
+                            <li><a href="#roadmap">Roadmap</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </header>
+            <img src="hero-visual.png" alt="" class="hero-visual">
             <h2>BUILD LAUNCH BECOME</h2>
 
             <ul class="hero-list">
@@ -37,6 +37,7 @@
                 <li>Launch your rocket</li>
                 <li>Become an engineer</li>
             </ul>
+            <button class="cta">Join waitlist</button>
         </section>
 
         <section id="simulator">
@@ -52,15 +53,15 @@
             <dl class="learn-list">
                 <div>
                     <dt>Aerodynamics</dt>
-                    <dd>Lift, drag, angle of attack</dd>
+                    <dd>You will learn how angle of attack changes lift and drag, and where that curve breaks into a stall</dd>
                 </div>
                 <div>
                     <dt>Flight physics</dt>
-                    <dd>Forces, stability, control response</dd>
+                    <dd>Forces computed on a real Rigidbody, with PID-based control keeping the aircraft stable in flight</dd>
                 </div>
                 <div>
                     <dt>Engineering</dt>
-                    <dd>Wing design, airfoils, aircraft configuration</dd>
+                    <dd>Experiment with wing design, airfoils and aircraft configuration. Change the shape, feel how the handling changes</dd>
                 </div>
             </dl>
         </section>
@@ -68,10 +69,20 @@
         <section id="roadmap">
             <h2>Roadmap</h2>
             <ol class="timeline">
-                <li><span class="tl-num">01</span><span class="tl-body">Flyable prototype — one aircraft, core physics, basic HUD</span></li>
-                <li><span class="tl-num">02</span><span class="tl-body">Flight instrument tuning, attitude hold</span></li>
-                <li><span class="tl-num">03</span><span class="tl-body">Multiple aircraft and environments</span></li>
-            </ol>
+            <li>
+                <span class="tl-num">01</span>
+                <span class="tl-body">Flight physics core — manually-computed aerodynamics on a Rigidbody, PID-based rate control with attitude hold</span>
+                <img src="avionGirando.png" alt="" class="tl-images">
+            </li>
+            <li>
+                <span class="tl-num">02</span>
+                <span class="tl-body">Flyable aircraft, HUD, and terrain — flight path marker, pitch ladder, landing gear, procedural terrain</span>
+                    <img src="preview.jpg" alt="" class="tl-images">
+            </li>
+            <li><span class="tl-num">03</span><span class="tl-body">Guided flight tutorial and refined handling</span></li>
+            <li><span class="tl-num">04</span><span class="tl-body">Aircraft-building sandbox — design your own wing and airfoil configuration</span></li>
+            <li><span class="tl-num">05</span><span class="tl-body">Multiple planets and atmospheric conditions, plus rocketry</span></li>
+        </ol>
         </section>
 
         <section id="faq">

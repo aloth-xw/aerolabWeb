@@ -1,58 +1,22 @@
+/* ELEMENTOS DE DISEÑO */
 :root {
-    --bg: #131235;
+    --bg: #242354;
+    --bg-dark: #131235;
     --bg-panel: #1A1948;
-    --text: #ECECF8;
+    --text: #FFFF;
     --text-dim: #8B89B8;
     --accent: #8FA8FF;
-    --accent-warn: #FF692E;
-    --line: rgba(236, 236, 248, .12);
+    --accent-warn: #AD6EFF;
+    --line: rgba(236, 236, 248, 0.12);
+
+    --font-heading: "Audiowide", sans-serif;
+    --font-body: "Space Grotesk", sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-}
-ol {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding:0;
-    font-family: "Space Grotesk", sans-serif;
-}
-
-header > div {
-    display: flex;
-    justify-content: space-between;
-}
-
-header {
-    padding: 30px 60px;
-}
-
-body {
-    background-color: #131235;
-    color: #ECECF8;
-}
-
-.head {
-    position: relative;
-    background-image: url("imagenFondoHead.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-.head::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(19,18,53,.35) 0%, rgba(19,18,53,.85) 100%);
-    z-index: 0;
-}
-
-.head > * {
-    position: relative;
-    z-index: 1;
 }
 
 html, body {
@@ -60,12 +24,153 @@ html, body {
     padding: 0;
 }
 
+body {
+    position: relative;
+    background-color: var(--bg-dark);
+    color: var(--text);
+    font-family: var(--font-body);
+}
+
+/* TEXTURA*/
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* FONTS*/
+h2 {
+    font-size: 36px;
+    font-family: var(--font-body);
+}
+
+p {
+    font-family: var(--font-body);
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* HEADER Y NAV*/
+header {
+    padding: 30px 60px;
+}
+
+header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px 60px;
+    z-index: 3;
+}
+
+.head > * {
+    position: relative;
+    z-index: 1;
+}
+
+.brand {
+    margin-top: 0;
+}
+
+.brand h2 {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    margin: 2px 0 0;
+}
+
+.logo {
+    font-size: 35px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+}
+
+nav a {
+    line-height: 1;
+}
+
+nav ol {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+}
+
+/* HERO*/
 .hero {
     position: relative;
     overflow: hidden;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+    padding-top: 35px;
+    border-top: none;
+    background-image: url("fondoHero.png");
+    background-size: cover;
+    background-position: center;
 }
 
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero > h2 {
+    margin: 0;
+    font-size: 64px;
+    text-align: center;
+    letter-spacing: 6px;
+    font-weight: 900;
+    background: linear-gradient(180deg, #FFFFFF 0%, #8FA8FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 0px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* GRADIENTES*/
 .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(19,18,53,.35) 0%,
+        rgba(19,18,53,.75) 45%,
+        var(--bg) 90%);
+    z-index: 0;
+}
+
+.hero::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -73,24 +178,10 @@ html, body {
     width: 700px;
     height: 700px;
     background: radial-gradient(circle, var(--accent-warn) 0%, transparent 65%);
-    transform: translate(-50%, -55%);
+    transform: translate(-50%, -35%);
     opacity: .18;
     filter: blur(40px);
-    z-index: -1;
-}
-
-body {
-    position: relative;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: .04;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    z-index: 1;
 }
 
 .horizon {
@@ -104,6 +195,14 @@ body::after {
     opacity: .5;
 }
 
+.hero-visual {
+    filter: drop-shadow(0 0 0 var(--accent));
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 0;
+}
+
 .hero-list {
     list-style: none;
     padding: 0;
@@ -112,11 +211,13 @@ body::after {
     flex-direction: column;
     gap: 6px;
     text-align: center;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: var(--font-body);
     font-size: 20px;
-    color: var(--text-dim);
+    color: var(--text);
+    opacity: .75;
 }
 
+/* LEARN */
 section {
     padding: 80px 60px;
     border-top: 1px solid var(--line);
@@ -137,45 +238,14 @@ section h2 {
     display: inline-block;
     font-size: 20px;
     margin-bottom: 12px;
-}
-
-.logo {
-    font-size: 64px;
     letter-spacing: 3px;
     font-weight: 700;
-    font-family: "Audiowide", sans-serif;
-}
-
-.panel-status {
-    font-size: 20px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    font-family: "Audiowide", sans-serif;
-}
-
-a {
-    color: #ECECF8;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #8FA8FF;
-}
-
-h2 {
-    font-size: 36px;
-    font-family: "Space Grotesk", sans-serif;
-}
-
-.hero h2 {
-    font-size: 52px;
-    text-align: center;
-    letter-spacing: 4px;
+    font-family: var(--font-heading);
 }
 
 .learn-list {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     margin: 0;
 }
@@ -183,25 +253,17 @@ h2 {
 .learn-list dt {
     font-weight: 700;
     margin-bottom: 8px;
-    font-family: "Audiowide", sans-serif;
+    font-family: var(--font-heading);
     letter-spacing: 4px;
 }
 
 .learn-list dd {
     margin: 0;
     color: var(--text-dim);
-    font-family: "Space Grotesk", sans-serif;
+    font-family: var(--font-body);
 }
 
-p {
-    font-family: "Space Grotesk", sans-serif;
-}
-
-.hero p {
-    font-size: 20px;
-    margin: 24px;
-}
-
+/* ROADMAP*/
 .timeline {
     list-style: none;
     margin: 0;
@@ -211,8 +273,11 @@ p {
 
 .timeline li {
     display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
     gap: 20px;
     padding: 16px 0 16px 24px;
+    font-size: 18px;
 }
 
 .tl-body {
@@ -221,9 +286,24 @@ p {
 }
 
 .tl-num {
-    font-family: "Audiowide", sans-serif;
+    font-family: var(--font-heading);
     font-size: 14px;
     color: var(--accent);
+}
+
+.tl-images {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+    margin-left: 34px;
+}
+
+.tl-images img {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid var(--line);
+    object-fit: cover;
 }
 
 details {
@@ -236,7 +316,7 @@ details:last-of-type {
 }
 
 summary {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: var(--font-body);
     font-size: 20px;
     cursor: pointer;
     font-weight: 500;
@@ -247,18 +327,19 @@ details p {
     color: var(--text-dim);
 }
 
+/* BOTONES*/
 .cta {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: var(--font-body);
     font-weight: 700;
     font-size: 16px;
     color: var(--bg);
     background: var(--accent-warn);
     border: none;
+    margin-top: 12px;
     padding: 14px 32px;
     cursor: pointer;
-  justify-content: space-around;
 }
 
 .cta:hover {
-    background: #FFA57D;
+    background: var(--accent-hover);
 }
