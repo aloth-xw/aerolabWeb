@@ -7,6 +7,7 @@
     --text-dim: #8B89B8;
     --accent: #8FA8FF;
     --accent-warn: #AD6EFF;
+    --accent-hover: #FFA57D;
     --line: rgba(236, 236, 248, 0.12);
 
     --font-heading: "Audiowide", sans-serif;
@@ -342,4 +343,29 @@ details p {
 
 .cta:hover {
     background: var(--accent-hover);
+
+/*WAITLIST*/
+.waitlist-form {
+    display: flex;
+    gap: 12px;
+}
+
+.waitlist-form input {
+    font-family: var(--font-body);
+    font-size: 16px;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    background: var(--bg-panel);
+    color: var(--text);
+    border-radius: 0;
+}
+
+.waitlist-form input::placeholder {
+    color: var(--text-dim);
+}
+
+.waitlist-form input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
 }
