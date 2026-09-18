@@ -343,6 +343,7 @@ details p {
 
 .cta:hover {
     background: var(--accent-hover);
+}
 
 /*WAITLIST*/
 .waitlist-form {
@@ -368,4 +369,53 @@ details p {
     outline: none;
     border-color: var(--accent);
 }
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding-bottom: 60px;
+    }
+
+    .head {
+        padding: 16px 24px;
+    }
+
+    header > div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    nav ol {
+        justify-content: flex-start;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .hero > h2 {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    section {
+        padding: 48px 24px;
+    }
+
+    .learn-list {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .timeline li {
+        padding-left: 16px;
+    }
+
+    .tl-images {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .waitlist-form {
+        flex-direction: column;
+    }
 }
